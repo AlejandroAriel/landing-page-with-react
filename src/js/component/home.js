@@ -1,24 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
-
+import { Navbar } from "./navbar.js";
+import { Jumbotron } from "./jumbotron";
+import { Cards } from "./cards";
 //create your first component
 export function Home() {
+	// const [arr, setArr] = useState([]);
+	// const [newStr, setNewStr] = useState("");
+	let arr = ["hola", "chau", "juego", "ficha"];
 	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className="text-center">
+			<Navbar />
+			<Jumbotron />
+			{/* <input
+				onChange={e => {
+					setNewStr(e.target.value);
+				}}></input>
+
+			<button
+				onClick={() => {
+					setArr([...arr, newStr]);
+				}}>
+				skdjg
+			</button> */}
+			<div class="container">
+				<div class="row">
+					{arr.map((el, i) => {
+						console.log(el, i);
+						return <Cards title={el} key={i} />;
+					})}
+				</div>
+			</div>
+			;
 		</div>
 	);
 }
