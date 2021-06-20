@@ -9,7 +9,7 @@ import { Cards } from "./cards";
 export function Home() {
 	// const [arr, setArr] = useState([]);
 	// const [newStr, setNewStr] = useState("");
-	let arr = ["hola", "chau", "juego", "ficha"];
+	let arr = ["", "", "", ""];
 	return (
 		<div className="text-center">
 			<Navbar />
@@ -25,8 +25,8 @@ export function Home() {
 				}}>
 				skdjg
 			</button> */}
-			<div class="container">
-				<div class="row">
+			<div className="container">
+				<div className="row">
 					{arr.map((el, i) => {
 						console.log(el, i);
 						return <Cards title={el} key={i} />;
